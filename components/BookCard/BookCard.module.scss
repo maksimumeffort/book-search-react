@@ -1,15 +1,39 @@
 .BookCard {
   margin: 10px;
   width: 400px;
-  height: 500px;
-  border: 1px solid grey;
+  height: 450px;
+  // border: 1px solid grey;
+  background-color: white;
   border-radius: 6px;
   display: flex;
-  align-items: center;
+  align-items: space-between;
   flex-direction: column;
   padding: 2px;
-  &_Img {
-    width: 40%;
-    height: 40%;
-  }
+  //bookCard_image
+  // &_Img {
+  //   width: 40%;
+  //   height: 40%;
+  // }
+}
+
+//bookCard_title
+.BookCard_title {
+  margin-top: 0px;
+  border: 1px solid red;
+}
+
+//bookCard_image
+.BookCard_image {
+  width: 40%;
+  height: 40%;
+  border: 1px solid blue;
+}
+
+//bookCard_author
+.BookCard_author {
+  border: 1px solid yellow;
+}
+//bookCard_description
+.BookCard_description {
+  border: 1px solid green;
 }

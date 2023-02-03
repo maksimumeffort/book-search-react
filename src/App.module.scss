@@ -5,4 +5,32 @@
   flex-direction: column;
   width: 100vw;
   align-items: center;
+  background-color: #7a306c;
+  height: 100vh;
+}
+
+//app nav
+.App_nav {
+  background-color: white;
+  width: 100vw;
+  height: 50px;
+  display: flex;
+}
+
+//app nav logo
+.App_navLogo {
+  color: #501e47;
+  // border: 1px solid red;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+//app nav searchBar
+.App_NavSearchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // border: 1px solid blue;
+  width: calc(100% - 150px);
 }

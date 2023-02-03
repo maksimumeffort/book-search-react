@@ -21,8 +21,16 @@ function App() {
 
   return (
     <div className={styles.App}>
-      <h2>Book Search</h2>
-      <SearchForm setBooks={setBooks} getBooks={getBooks} />
+      <nav className={styles.App_nav}>
+        <div className={styles.App_navLogo}>
+          <h2>Book Search</h2>
+        </div>
+
+        <div className={styles.App_NavSearchBar}>
+          <SearchForm setBooks={setBooks} getBooks={getBooks} />
+        </div>
+      </nav>
+
       <BookCardList books={books} />
     </div>
   );

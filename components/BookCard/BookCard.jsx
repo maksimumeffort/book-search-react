@@ -23,8 +23,6 @@ const BookCard = ({ book }) => {
 
   const cleanTextSnippet = cleanTextSnippetArray.join(" ");
 
-  // console.log(cleanTextSnippet);
-
   const checkForImage = () => {
     const imageLink = book.volumeInfo.imageLinks.smallThumbnail;
     return imageLink ? imageLink : "";
@@ -32,14 +30,17 @@ const BookCard = ({ book }) => {
 
   return (
     <div className={styles.BookCard}>
-      <h3>{book.volumeInfo.title}</h3>
+      <h3 className={styles.BookCard_title}>{book.volumeInfo.title}</h3>
+
       <img
         src={checkForImage()}
         alt="book cover"
-        className={styles.BookCard_Img}
+        className={styles.BookCard_image}
       />
-      <h4>{book.volumeInfo.authors}</h4>
-      <p>{cleanTextSnippet ?? "no description available"}</p>
+      <h4 className={styles.BookCard_author}>{book.volumeInfo.authors}</h4>
+      <p className={styles.BookCard_description}>
+        {cleanTextSnippet ?? "no description available"}
+      </p>
     </div>
   );
 };
