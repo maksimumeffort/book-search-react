@@ -1,5 +1,6 @@
 import { useState } from "react";
 // import { getBooks } from "../../src/services/books";
+import styles from "./SearchForm.module.scss";
 
 const SearchForm = ({ setBooks, getBooks }) => {
   const [path, setPath] = useState("");
@@ -18,14 +19,19 @@ const SearchForm = ({ setBooks, getBooks }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={styles.SearchForm}>
         <input
+          className={styles.SearchForm_input}
           type="text"
           name="search"
           placeholder="Type in book info"
           onChange={handleChange}
         />
-        <input type="submit" value="Search" />
+        <input
+          className={styles.SearchForm_button}
+          type="submit"
+          value="Find"
+        />
       </form>
     </div>
   );
