@@ -15,20 +15,9 @@ function App() {
     // console.log(promise);
     // const response = promise.then((res) => console.log(res));
     const data = await response.json();
-    // const finalData = await response.items;
-
-    console.log(data.items);
 
     setBooks(data.items);
   };
-
-  useEffect(() => {
-    // const wrapper = async () => {
-    //   const allBooks = await getBooks();
-    //   getBooks();
-    // };
-    // wrapper();
-  });
 
   return (
     <div className={styles.App}>

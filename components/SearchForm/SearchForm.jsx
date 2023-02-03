@@ -12,7 +12,7 @@ const SearchForm = ({ setBooks, getBooks }) => {
   const handleSubmit = async (event) => {
     // Api call and promises go here
     event.preventDefault();
-    console.log(`your search is for: ${path}`);
+    // console.log(`your search is for: ${path}`);
     await getBooks(path);
   };
 
