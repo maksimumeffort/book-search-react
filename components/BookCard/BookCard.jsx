@@ -8,17 +8,17 @@ const BookCard = ({ book }) => {
   const cleanTextSnippetArray = [];
 
   textSnippetArray.forEach((el) => {
-    if (el.includes("&#")) {
-      const codePattern = /&(\D\d+;|\S\w+;)/;
-      const numberPattern = /\d+/;
-      const codeExtract = codePattern.exec(el)[0];
-      const numberInCode = numberPattern.exec(codeExtract)[0];
+    // if (el.includes("&#")) {
+    //   const codePattern = /&(\D\d+;|\S\w+;)/;
+    //   const numberPattern = /\d+/;
+    //   const codeExtract = codePattern.exec(el)[0];
+    //   const numberInCode = numberPattern.exec(codeExtract)[0];
 
-      const newEl = el.replace(codeExtract, String.fromCharCode(numberInCode));
-      cleanTextSnippetArray.push(newEl);
-    } else {
-      cleanTextSnippetArray.push(el);
-    }
+    //   const newEl = el.replace(codeExtract, String.fromCharCode(numberInCode));
+    //   cleanTextSnippetArray.push(newEl);
+    // } else {
+    cleanTextSnippetArray.push(el);
+    // }
   });
 
   const cleanTextSnippet = cleanTextSnippetArray.join(" ");
@@ -30,17 +30,21 @@ const BookCard = ({ book }) => {
 
   return (
     <div className={styles.BookCard}>
-      <h3 className={styles.BookCard_title}>{book.volumeInfo.title}</h3>
+      <section>
+        <h3 className={styles.BookCard_title}>{book.volumeInfo.title}</h3>
+        <h4 className={styles.BookCard_author}>{book.volumeInfo.authors}</h4>
+      </section>
 
       <img
         src={checkForImage()}
         alt="book cover"
         className={styles.BookCard_image}
       />
-      <h4 className={styles.BookCard_author}>{book.volumeInfo.authors}</h4>
-      <p className={styles.BookCard_description}>
-        {cleanTextSnippet ?? "no description available"}
-      </p>
+      <section className={styles.BookCard_bottomSection}>
+        <p className={styles.BookCard_description}>
+          {cleanTextSnippet ?? "no description available"}
+        </p>
+      </section>
     </div>
   );
 };

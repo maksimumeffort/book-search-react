@@ -6,9 +6,9 @@
   background-color: white;
   border-radius: 6px;
   display: flex;
-  align-items: space-between;
+  align-items: space-around;
   flex-direction: column;
-  padding: 2px;
+  // padding: 2px;
   //bookCard_image
   // &_Img {
   //   width: 40%;
@@ -16,24 +16,50 @@
   // }
 }
 
-//bookCard_title
-.BookCard_title {
-  margin-top: 0px;
-  border: 1px solid red;
+.BookCard_bottomSection {
+  position: relative;
+  height: 200px;
 }
 
-//bookCard_image
-.BookCard_image {
-  width: 40%;
-  height: 40%;
-  border: 1px solid blue;
+//bookCard_title
+.BookCard_title {
+  margin-top: 10px;
+  // border: 1px solid red;
+  text-align: center;
+  color: #7a306c;
 }
 
 //bookCard_author
 .BookCard_author {
-  border: 1px solid yellow;
+  // border: 1px solid yellow;
+  text-align: center;
+  color: #bc45a5;
+  margin-top: 0px;
 }
+
+//bookCard_image
+.BookCard_image {
+  width: 50%;
+  height: auto;
+  // border: 1px solid blue;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 //bookCard_description
 .BookCard_description {
-  border: 1px solid green;
+  text-align: center;
+  padding: 5px;
+  width: 97.5%;
+  border: 2px solid #7a306c;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+  opacity: 0.9;
 }
