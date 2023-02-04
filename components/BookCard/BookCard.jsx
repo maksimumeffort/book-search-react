@@ -8,17 +8,18 @@ const BookCard = ({ book }) => {
   const cleanTextSnippetArray = [];
 
   textSnippetArray.forEach((el) => {
-    // if (el.includes("&#")) {
-    //   const codePattern = /&(\D\d+;|\S\w+;)/;
-    //   const numberPattern = /\d+/;
-    //   const codeExtract = codePattern.exec(el)[0];
-    //   const numberInCode = numberPattern.exec(codeExtract)[0];
-
-    //   const newEl = el.replace(codeExtract, String.fromCharCode(numberInCode));
-    //   cleanTextSnippetArray.push(newEl);
-    // } else {
-    cleanTextSnippetArray.push(el);
-    // }
+    if (el.includes("&#39;")) {
+      // const codePattern = /&\S+;/;
+      // const stringPattern = /(\d+|\w+)/;
+      const cleanString = el.replace("&#39;", String.fromCharCode(39));
+      cleanTextSnippetArray.push(cleanString);
+    } else if (el.includes("&quot;")) {
+      console.log(el);
+      const cleanString = el.replace("&quot;", '"');
+      cleanTextSnippetArray.push(cleanString);
+    } else {
+      cleanTextSnippetArray.push(el);
+    }
   });
 
   const cleanTextSnippet = cleanTextSnippetArray.join(" ");

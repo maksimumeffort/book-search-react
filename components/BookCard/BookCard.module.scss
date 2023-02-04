@@ -45,6 +45,7 @@
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1;
 }
 
 //bookCard_description
@@ -62,4 +63,5 @@
   bottom: 0;
   background-color: white;
   opacity: 0.9;
+  z-index: 2;
 }
